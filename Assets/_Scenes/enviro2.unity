@@ -5907,12 +5907,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 705732376825856150, guid: 2a3b15f4a62ff32489e3ab1ef6efa6d0,
+    - target: {fileID: 7965476183865244922, guid: 2a3b15f4a62ff32489e3ab1ef6efa6d0,
         type: 3}
-      propertyPath: Ennemi
+      propertyPath: pourcentageTxt
       value: 
-      objectReference: {fileID: 6711278413748331574, guid: 684f18bbfb429554383a9d9909e81326,
+      objectReference: {fileID: 450745349}
+    - target: {fileID: 7965476183865244922, guid: 2a3b15f4a62ff32489e3ab1ef6efa6d0,
         type: 3}
+      propertyPath: audioBad
+      value: 
+      objectReference: {fileID: 273458313}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2a3b15f4a62ff32489e3ab1ef6efa6d0, type: 3}
 --- !u!1 &1748406418

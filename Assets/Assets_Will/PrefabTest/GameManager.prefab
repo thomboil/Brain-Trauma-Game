@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 705732376825856151}
   - component: {fileID: 705732376825856150}
+  - component: {fileID: 7965476183865244922}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -43,6 +44,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 013ae0e29a5e6604592c00f8645d94d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nbVagues: 5
-  nextVague: 4
-  Ennemi: {fileID: 4222221376769395384, guid: 8c0924f37775c134a9b2914b6ca2ed67, type: 3}
+  nbSpawn: 2
+  nextSpawnTime: 2
+  cptSpawn: 0
+  Ennemi: {fileID: 6711278413748331574, guid: 684f18bbfb429554383a9d9909e81326, type: 3}
+--- !u!114 &7965476183865244922
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 705732376825856168}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7d4620752a624e4ca71830ad5745890, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pourcentageTxt: {fileID: 0}
+  audioBad: {fileID: 0}
