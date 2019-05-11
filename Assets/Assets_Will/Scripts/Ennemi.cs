@@ -5,7 +5,9 @@ using UnityEngine;
 public class Ennemi : MonoBehaviour
 {
 
-    int vie = 2;
+    static int nbEnnemi = 0;
+
+    float vie = 2;
     int vitesse = 1;
     int damage = 1;
 
@@ -16,6 +18,7 @@ public class Ennemi : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        ++nbEnnemi;
         rb = GetComponent<Rigidbody>();
         timeToMutate = Random.Range(3f, 8f);
     }
@@ -66,6 +69,24 @@ public class Ennemi : MonoBehaviour
 
     private void Mutate()
     {
-        Instantiate(gameObject, transform.position, transform.rotation);
+        if(nbEnnemi < 50)
+        {
+            Instantiate(gameObject, transform.position, transform.rotation);
+
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.tag == "Bullet")
+        {
+            Debug.Log("touch");
+            vie -= other.GetComponent<GunBall>().damage;
+            if(vie == 0)
+            {
+                //TODO instanstiate explosion
+                Destroy(gameObject);
+            }
+        }
     }
 }

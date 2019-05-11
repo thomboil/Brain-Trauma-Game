@@ -18,9 +18,9 @@ public class Shooting : MonoBehaviour
         //TODO choisir les inputs pour shoot
         if(Input.GetMouseButtonDown(0))
         {
-            Debug.Log("hi");
+
             GameObject ball;
-            ball = Instantiate(gunBall, transform.position, transform.rotation);
+            ball = Instantiate(gunBall, transform.position + transform.up, transform.rotation);
             ball.GetComponent<Rigidbody>().AddForce(ball.transform.forward * speedShot, ForceMode.Impulse);
 
         }

@@ -6,7 +6,8 @@ public class GenerationEnnemi : MonoBehaviour
 {
 
     public int nbVagues = 5;
-    public float nextVague = 4;
+    public float nextVagueTime = 4;
+    int cptVague = 0;
 
     public GameObject Ennemi;
     GameObject planet;
@@ -24,10 +25,11 @@ public class GenerationEnnemi : MonoBehaviour
 
     IEnumerator TimerNextVague()
     {
-        Debug.Log("Hey");
-        yield return new WaitForSeconds(nextVague);
+        yield return new WaitForSeconds(nextVagueTime);
         SpawnEnnemi();
-        StartCoroutine("TimerNextVague");
+        if(cptVague < nbVagues)
+            StartCoroutine("TimerNextVague");
+        cptVague++;
 
     }
 
@@ -46,7 +48,14 @@ public class GenerationEnnemi : MonoBehaviour
 
         float hypo = Mathf.Sqrt(x * x + z * z);
         float y = Mathf.Sqrt(Mathf.Abs( scale * scale - hypo * hypo));
-        Vector3 positionSpawn = new Vector3(x, y, z);
+        int side = Random.Range(0, 2);
+        Vector3 positionSpawn;
+        if(side == 0)
+            positionSpawn = new Vector3(x, y, z);
+        else
+            positionSpawn = new Vector3(x, -y, z);
+
+
 
         GameObject ennemi = Instantiate(Ennemi, positionSpawn, Quaternion.identity);
     }
