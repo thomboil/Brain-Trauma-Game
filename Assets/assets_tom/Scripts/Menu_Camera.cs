@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Menu_Camera : MonoBehaviour
 {
@@ -12,11 +13,19 @@ public class Menu_Camera : MonoBehaviour
     public Transform robot;
 
     public Transform cameraGameObject;
+
+    public GameObject player;
+    public GameObject gameManager;
+
+    public GameObject canvasJouer;
+
     // Start is called before the first frame update
     void Start()
     {
         cameraGameObject.position = menuPosition.position; //position initiale de la camera au menu
         play = false;
+        canvasJouer = GameObject.Find("Canvas_jouer");
+        canvasJouer.SetActive(false);
     }
 
     // Update is called once per frame
@@ -30,7 +39,7 @@ public class Menu_Camera : MonoBehaviour
             //cameraGameObject.transform.LookAt(robot);
             cameraGameObject.localRotation = Quaternion.Slerp(cameraGameObject.localRotation, Quaternion.Euler(90, 0, 0), transitionSpeed * Time.deltaTime);
 
-
+            canvasJouer.SetActive(true);
         }
 
         if (cameraGameObject.localPosition.y == playPosition.y)
@@ -38,6 +47,18 @@ public class Menu_Camera : MonoBehaviour
             play = false; //Arreter le mouvement de la camera mais le jeu continue
             Debug.Log("STOP");
 
+
+            //Canvas set active
+            
+
+            //Activation des scripts quand la camera est bien placee et on est pret a jouer.
+
+            //Player
+            player.GetComponent<Player_Menu_Mvt>().gameObject.SetActive(false);
+            player.GetComponent<PlayerMouvement>().gameObject.SetActive(true);
+
+            //Game manager
+            gameManager.GetComponent<GenerationEnnemi>().gameObject.SetActive(true);
         }
 
 
@@ -46,6 +67,11 @@ public class Menu_Camera : MonoBehaviour
     public void CameraStartGame()
     {
         play = true;
+        GameObject.Find("Canvas_menu").SetActive(false);
+
+        
+
+
 
     }
 }
