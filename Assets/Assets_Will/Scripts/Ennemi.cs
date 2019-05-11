@@ -88,5 +88,22 @@ public class Ennemi : MonoBehaviour
                 Destroy(gameObject);
             }
         }
+
+        if(other.tag == "Player")
+        {
+            Debug.Log("Heyyy");
+            Destroy(gameObject);
+
+        }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.collider.tag == "Player")
+        {
+            Debug.Log("Heyyy");
+            Destroy(gameObject);
+
+        }
     }
 }
