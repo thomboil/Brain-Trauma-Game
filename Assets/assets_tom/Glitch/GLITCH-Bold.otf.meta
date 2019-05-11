@@ -1,0 +1,25 @@
+fileFormatVersion: 2
+guid: fa17c0ffb2a6f7f43b84418b3cc8b801
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: GLITCH
+  fontNames:
+  - GLITCH
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 7875e1f04be479a478d023f9174b3e2b, type: 3}
+  - {fileID: 12800000, guid: ada2f8d40dc4aee4da938067f80cf7ae, type: 3}
+  - {fileID: 12800000, guid: 56fb3f4ffacda5644b10d2caf5b82097, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

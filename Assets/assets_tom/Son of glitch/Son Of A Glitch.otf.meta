@@ -1,0 +1,25 @@
+fileFormatVersion: 2
+guid: e6615af5ed3b5c64495e3dea923004df
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Son Of A Glitch
+  fontNames:
+  - Son Of A Glitch
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: a461fa11e8ed69a41b4c1a3937ff2faa, type: 3}
+  - {fileID: 12800000, guid: 3f8af6c89c69de3419285cf67a251ce7, type: 3}
+  - {fileID: 12800000, guid: a9d3785dd37a31d4a882b7544128c649, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

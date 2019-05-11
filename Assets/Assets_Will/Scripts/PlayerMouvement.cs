@@ -9,8 +9,8 @@ public class PlayerMouvement : MonoBehaviour
     float rotation;
     Rigidbody rb;
 
-    public float speedMouvement = 5;
-    public float speedRotation = 5;
+    public float speedMouvement = 2;
+    public float speedRotation = 2;
     // Start is called before the first frame update
     void Start()
     {

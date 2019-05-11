@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: ca371611bd1002e4997c282e72a8878e
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Parametric Glitch
+  fontNames:
+  - Parametric Glitch
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 0048a51145db12142b6ed2b3bb457c57, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
