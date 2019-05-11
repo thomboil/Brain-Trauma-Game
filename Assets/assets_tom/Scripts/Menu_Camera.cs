@@ -27,7 +27,7 @@ public class Menu_Camera : MonoBehaviour
         canvasJouer = GameObject.Find("Canvas_jouer");
         canvasJouer.SetActive(false);
     }
-
+    bool oneTime = true;
     // Update is called once per frame
     void Update()
     {
@@ -42,8 +42,9 @@ public class Menu_Camera : MonoBehaviour
             canvasJouer.SetActive(true);
         }
 
-        if (cameraGameObject.localPosition.y == playPosition.y)
+        if (cameraGameObject.localPosition.y == playPosition.y && oneTime)
         {
+            oneTime = false;
             play = false; //Arreter le mouvement de la camera mais le jeu continue
             Debug.Log("STOP");
 

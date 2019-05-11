@@ -21,7 +21,7 @@ public class pourcentage : MonoBehaviour
     {
 
         //Calcul et affichage de la sante de la planete
-        int pourcentage = (1 - (Ennemi.nbEnnemi / PlanetColor.nbMaxEnnemi))*100;
+        int pourcentage = (int)((1 - ((float)Ennemi.nbEnnemi / (float)PlanetColor.nbMaxEnnemi))*100);
         pourcentageTxt.text = pourcentage.ToString() + "%";
 
         //Le son de peur augmente quand la planete est infectee

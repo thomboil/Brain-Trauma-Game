@@ -118,7 +118,7 @@ public class Ennemi : MonoBehaviour
             {
                 --nbEnnemi;
 
-                var r = Instantiate(rocket, transform.position, Quaternion.identity);
+                var r = Instantiate(rocket, transform.position, transform.rotation);
                 //TODO instanstiate explosion
                 Destroy(gameObject);
             }
