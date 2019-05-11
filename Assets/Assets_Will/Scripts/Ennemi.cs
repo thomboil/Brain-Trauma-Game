@@ -5,7 +5,7 @@ using UnityEngine;
 public class Ennemi : MonoBehaviour
 {
 
-    static int nbEnnemi = 0;
+    public static int nbEnnemi = 0;
 
     float vie = 2;
     int vitesse = 1;
@@ -20,7 +20,7 @@ public class Ennemi : MonoBehaviour
     {
         ++nbEnnemi;
         rb = GetComponent<Rigidbody>();
-        timeToMutate = Random.Range(3f, 8f);
+        timeToMutate = Random.Range(10f, 15f);
     }
 
 
@@ -91,19 +91,19 @@ public class Ennemi : MonoBehaviour
 
         if(other.tag == "Player")
         {
-            Debug.Log("Heyyy");
+            --nbEnnemi;
             Destroy(gameObject);
-
         }
     }
 
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.collider.tag == "Player")
-        {
-            Debug.Log("Heyyy");
-            Destroy(gameObject);
+    //private void OnCollisionEnter(Collision collision)
+    //{
+    //    if (collision.collider.tag == "Player")
+    //    {
+    //        --nbEnnemi;
+    //        Debug.Log("Heyyy");
+    //        Destroy(gameObject);
 
-        }
-    }
+    //    }
+    //}
 }

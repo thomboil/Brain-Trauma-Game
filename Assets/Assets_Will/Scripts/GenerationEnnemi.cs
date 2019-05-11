@@ -5,9 +5,9 @@ using UnityEngine;
 public class GenerationEnnemi : MonoBehaviour
 {
 
-    public int nbVagues = 5;
-    public float nextVagueTime = 4;
-    int cptVague = 0;
+    public int nbSpawn = 2;
+    public float nextSpawnTime = 2;
+    public int cptSpawn = 0;
 
     public GameObject Ennemi;
     GameObject planet;
@@ -25,11 +25,20 @@ public class GenerationEnnemi : MonoBehaviour
 
     IEnumerator TimerNextVague()
     {
-        yield return new WaitForSeconds(nextVagueTime);
-        SpawnEnnemi();
-        if(cptVague < nbVagues)
+        yield return new WaitForSeconds(nextSpawnTime);
+        ++cptSpawn;
+        if(cptSpawn < nbSpawn)
+        {
+            SpawnEnnemi();
             StartCoroutine("TimerNextVague");
-        cptVague++;
+
+        }
+
+    }
+
+    public void NextWave()
+    {
+        StartCoroutine("TimerNextVague");
 
     }
 
