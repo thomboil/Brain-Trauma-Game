@@ -16,13 +16,15 @@ public class GenerationEnnemi : MonoBehaviour
     void Start()
     {
         timer = 0;
+        GetPlanet();
+
         SpawnEnnemi();
         StartCoroutine("TimerNextVague");
-        GetPlanet();
     }
 
-    IEnumerable TimerNextVague()
+    IEnumerator TimerNextVague()
     {
+        Debug.Log("Hey");
         yield return new WaitForSeconds(nextVague);
         SpawnEnnemi();
         StartCoroutine("TimerNextVague");
@@ -31,7 +33,7 @@ public class GenerationEnnemi : MonoBehaviour
 
     public void GetPlanet()
     {
-        planet = GameObject.FindGameObjectWithTag("Planet");
+        planet = GameObject.Find("Planet");
     }
 
     int distanceSpawn = 10;
@@ -43,8 +45,7 @@ public class GenerationEnnemi : MonoBehaviour
         float z = Random.Range(-scale, scale);
 
         float hypo = Mathf.Sqrt(x * x + z * z);
-        float y = Mathf.Sqrt(scale * scale - hypo * hypo);
-
+        float y = Mathf.Sqrt(Mathf.Abs( scale * scale - hypo * hypo));
         Vector3 positionSpawn = new Vector3(x, y, z);
 
         GameObject ennemi = Instantiate(Ennemi, positionSpawn, Quaternion.identity);
