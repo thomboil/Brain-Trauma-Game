@@ -8,7 +8,7 @@ public class PlanetColor : MonoBehaviour
 
     Material mat;
     Color couleurInitiale;
-    int nbMaxEnnemi = 25;
+    public static int nbMaxEnnemi = 25;
     // Start is called before the first frame update
     void Start()
     {
