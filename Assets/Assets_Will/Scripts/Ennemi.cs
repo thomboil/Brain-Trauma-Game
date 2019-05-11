@@ -7,13 +7,15 @@ public class Ennemi : MonoBehaviour
 
     public static int nbEnnemi = 0;
 
-    float vie = 2;
+    float vie = 1;
+    float vieIni;
     int vitesse = 1;
     int damage = 1;
 
     Vector3 direction;
     Rigidbody rb;
-
+    ParticleSystem ps;
+    float psRadiusIni;
 
     // Start is called before the first frame update
     void Start()
@@ -21,6 +23,11 @@ public class Ennemi : MonoBehaviour
         ++nbEnnemi;
         rb = GetComponent<Rigidbody>();
         timeToMutate = Random.Range(10f, 15f);
+
+        ps = GetComponentInChildren<ParticleSystem>();
+        psRadiusIni = ps.shape.radius;
+
+        vieIni = vie;
     }
 
 
@@ -78,10 +85,10 @@ public class Ennemi : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.tag == "Bullet")
+        if(other.tag == "FlareCollider")
         {
             Debug.Log("touch");
-            vie -= other.GetComponent<GunBall>().damage;
+            vie -= other.GetComponent<Flare>().damage;
             if(vie == 0)
             {
                 //TODO instanstiate explosion
@@ -94,6 +101,29 @@ public class Ennemi : MonoBehaviour
             --nbEnnemi;
             Destroy(gameObject);
         }
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.tag == "FlareCollider")
+        {
+            Debug.Log("touch");
+            vie -= other.GetComponent<Flare>().damage;
+            if (vie <= 0)
+            {
+                --nbEnnemi;
+
+                //TODO instanstiate explosion
+                Destroy(gameObject);
+            }
+            HaloRange();
+        }
+    }
+
+    private void HaloRange()
+    {
+        var r = ps.shape;
+        r.radius = psRadiusIni * vie;
     }
 
     //private void OnCollisionEnter(Collision collision)

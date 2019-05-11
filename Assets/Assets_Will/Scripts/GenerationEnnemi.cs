@@ -19,7 +19,6 @@ public class GenerationEnnemi : MonoBehaviour
         timer = 0;
         GetPlanet();
 
-        SpawnEnnemi();
         StartCoroutine("TimerNextVague");
     }
 
@@ -27,12 +26,14 @@ public class GenerationEnnemi : MonoBehaviour
     {
         yield return new WaitForSeconds(nextSpawnTime);
         ++cptSpawn;
-        if(cptSpawn < nbSpawn)
+
+        if (cptSpawn <= nbSpawn)
         {
             SpawnEnnemi();
             StartCoroutine("TimerNextVague");
 
         }
+
 
     }
 

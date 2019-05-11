@@ -19,13 +19,15 @@ public class WavesManger : MonoBehaviour
     {
         if(Ennemi.nbEnnemi == 0 && ge.cptSpawn >= ge.nbSpawn)
         {
-            Debug.Log("YO");
+            Debug.Log("hey");
             ++level;
             ge.cptSpawn = 0;
             ++ge.nbSpawn;
             ge.nextSpawnTime /= difficulte;
             ge.NextWave();
+            Debug.Log(ge.nbSpawn);
+
         }
-        
+
     }
 }
