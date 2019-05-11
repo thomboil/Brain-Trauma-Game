@@ -14,8 +14,11 @@ public class Ennemi : MonoBehaviour
 
     Vector3 direction;
     Rigidbody rb;
+    Material mat;
     ParticleSystem ps;
     float psRadiusIni;
+
+    public ParticleSystem rocket;
 
     // Start is called before the first frame update
     void Start()
@@ -26,6 +29,8 @@ public class Ennemi : MonoBehaviour
 
         ps = GetComponentInChildren<ParticleSystem>();
         psRadiusIni = ps.shape.radius;
+
+        mat = GetComponent<Renderer>().material;
 
         vieIni = vie;
     }
@@ -83,25 +88,25 @@ public class Ennemi : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if(other.tag == "FlareCollider")
-        {
-            Debug.Log("touch");
-            vie -= other.GetComponent<Flare>().damage;
-            if(vie == 0)
-            {
-                //TODO instanstiate explosion
-                Destroy(gameObject);
-            }
-        }
+    //private void OnTriggerEnter(Collider other)
+    //{
+    //    if(other.tag == "FlareCollider")
+    //    {
+    //        Debug.Log("touch");
+    //        vie -= other.GetComponent<Flare>().damage;
+    //        if(vie == 0)
+    //        {
+    //            //TODO instanstiate explosion
+    //            Destroy(gameObject);
+    //        }
+    //    }
 
-        if(other.tag == "Player")
-        {
-            --nbEnnemi;
-            Destroy(gameObject);
-        }
-    }
+    //    if(other.tag == "Player")
+    //    {
+    //        --nbEnnemi;
+    //        Destroy(gameObject);
+    //    }
+    //}
 
     private void OnTriggerStay(Collider other)
     {
@@ -113,10 +118,12 @@ public class Ennemi : MonoBehaviour
             {
                 --nbEnnemi;
 
+                var r = Instantiate(rocket, transform.position, Quaternion.identity);
                 //TODO instanstiate explosion
                 Destroy(gameObject);
             }
             HaloRange();
+            ColorBaked();
         }
     }
 
@@ -124,6 +131,11 @@ public class Ennemi : MonoBehaviour
     {
         var r = ps.shape;
         r.radius = psRadiusIni * vie;
+    }
+
+    private void ColorBaked()
+    {
+        mat.color = new Color(vie, mat.color.b, mat.color.g, mat.color.a);
     }
 
     //private void OnCollisionEnter(Collision collision)

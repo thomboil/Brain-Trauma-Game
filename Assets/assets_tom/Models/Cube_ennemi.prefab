@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4085825721199422461}
   - component: {fileID: 8847501324691961225}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Spot Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -80,8 +80,8 @@ GameObject:
   - component: {fileID: 6794796355735800214}
   - component: {fileID: 5969254491662371725}
   - component: {fileID: 7818399403371065386}
-  m_Layer: 0
-  m_Name: Particle System
+  m_Layer: 12
+  m_Name: Halo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4782,7 +4782,7 @@ GameObject:
   - component: {fileID: 4313252145595829176}
   - component: {fileID: 4028602024724481617}
   - component: {fileID: 8883829443080014839}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Cube_ennemi
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4891,6 +4891,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2196a011de77b874d857eba97e3654c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rocket: {fileID: 787458690493653412, guid: a59a6df72b065cd4e8882bf9c7d7724f, type: 3}
 --- !u!114 &8883829443080014839
 MonoBehaviour:
   m_ObjectHideFlags: 0
