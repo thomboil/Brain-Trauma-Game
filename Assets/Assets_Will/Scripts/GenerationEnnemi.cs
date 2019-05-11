@@ -19,7 +19,6 @@ public class GenerationEnnemi : MonoBehaviour
         timer = 0;
         GetPlanet();
 
-        StartCoroutine("TimerNextVague");
     }
 
     IEnumerator TimerNextVague()
@@ -35,6 +34,16 @@ public class GenerationEnnemi : MonoBehaviour
         }
 
 
+    }
+    bool start = true;
+    private void LateUpdate()
+    {
+        if(start)
+        {
+            start = false;
+            StartCoroutine("TimerNextVague");
+
+        }
     }
 
     public void NextWave()
