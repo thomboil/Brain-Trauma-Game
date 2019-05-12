@@ -1,10 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 public class WavesManger : MonoBehaviour
 {
     GenerationEnnemi ge;
+    Canvas cnv;
 
     int level = 1;
     int waves = 4;
@@ -13,6 +15,9 @@ public class WavesManger : MonoBehaviour
     void Start()
     {
         ge = GetComponent<GenerationEnnemi>();
+
+        cnv = GetComponentsInChildren<Canvas>().First(x => x.name == "NextWave");
+        cnv.enabled = false;
     }
 
     // Update is called once per frame
@@ -25,13 +30,22 @@ public class WavesManger : MonoBehaviour
             ++ge.nbSpawn;
             ge.nextSpawnTime /= difficulte;
             ge.NextWave();
-            if(waves % 5 == 0)
+            if(waves % 18 == 0)
             {
                 ++level;
                 ChangePlanet();
             }
+
+            StartCoroutine("AffichageNextWave");
         }
 
+    }
+
+    IEnumerator AffichageNextWave()
+    {
+        cnv.enabled = true;
+        yield return new WaitForSeconds(1.5f);
+        cnv.enabled = false;
     }
 
 

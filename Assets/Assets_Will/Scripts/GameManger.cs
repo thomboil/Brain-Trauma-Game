@@ -18,7 +18,7 @@ public class GameManger : MonoBehaviour
         objG = GameObject.Find("Player").GetComponent<ObjectGravity>();
         spotlight = GameObject.Find("Player").GetComponentsInChildren<Light>().First(x => x.name == "Spot Light");
 
-        cnv = GetComponentInChildren<Canvas>();
+        cnv = GetComponentsInChildren<Canvas>().First(x => x.name == "EndGame");
         cnv.enabled = false;
     }
 
