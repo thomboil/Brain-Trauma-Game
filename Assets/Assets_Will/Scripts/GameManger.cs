@@ -11,6 +11,10 @@ public class GameManger : MonoBehaviour
     Light spotlight;
 
     Canvas cnv;
+
+    //audiosource
+
+    public AudioSource gameOver_Sound;
     // Start is called before the first frame update
     void Start()
     {
@@ -27,6 +31,8 @@ public class GameManger : MonoBehaviour
     {
         if(int.Parse(pourcentile.pourcentageTxt.text.Substring(0, pourcentile.pourcentageTxt.text.Length -1)) <= 0)
         {
+
+            gameOver_Sound.Play();
 
             objG.gravity = 5;
             if (spotlight.range > 0)

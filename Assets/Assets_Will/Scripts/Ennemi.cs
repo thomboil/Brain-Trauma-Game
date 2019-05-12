@@ -20,6 +20,10 @@ public class Ennemi : MonoBehaviour
 
     public ParticleSystem rocket;
 
+    //AudioSource
+    AudioSource kill_sound;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -34,6 +38,8 @@ public class Ennemi : MonoBehaviour
 
         vieIni = vie;
         StartCoroutine("BugFix");
+
+        kill_sound = GameObject.Find("Kill_Sfx").GetComponent<AudioSource>();
     }
 
     IEnumerator BugFix()
@@ -130,6 +136,9 @@ public class Ennemi : MonoBehaviour
 
                 var r = Instantiate(rocket, transform.position, transform.rotation);
                 //TODO instanstiate explosion
+
+                kill_sound.Play();
+
                 Destroy(gameObject);
             }
             HaloRange();

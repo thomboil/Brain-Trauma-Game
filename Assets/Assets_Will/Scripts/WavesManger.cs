@@ -11,6 +11,10 @@ public class WavesManger : MonoBehaviour
     int level = 1;
     public int waves = 0;
     float difficulte = 1.1f;
+
+    //audiosource
+
+    public AudioSource levelUp_sound;
     // Start is called before the first frame update
     void Start()
     {
@@ -43,9 +47,12 @@ public class WavesManger : MonoBehaviour
 
     IEnumerator AffichageNextWave()
     {
+        levelUp_sound.Play();
+
         cnv.enabled = true;
         yield return new WaitForSeconds(1.5f);
         cnv.enabled = false;
+
     }
 
 

@@ -12,6 +12,7 @@ public class GenerationEnnemi : MonoBehaviour
     public GameObject Ennemi;
     GameObject planet;
 
+    
     float timer;
     // Start is called before the first frame update
     void Start()
