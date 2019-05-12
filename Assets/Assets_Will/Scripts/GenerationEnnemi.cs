@@ -62,8 +62,8 @@ public class GenerationEnnemi : MonoBehaviour
     public void SpawnEnnemi()
     {
         float scale = planet.transform.localScale.x + distanceSpawn;
-        float x = Random.Range(-scale, scale);
-        float z = Random.Range(-scale, scale);
+        float x = Random.Range(-scale + planet.transform.position.x, scale + planet.transform.position.x);
+        float z = Random.Range(-scale + planet.transform.position.x, scale + planet.transform.position.x);
 
         float hypo = Mathf.Sqrt(x * x + z * z);
         float y = Mathf.Sqrt(Mathf.Abs( scale * scale - hypo * hypo));

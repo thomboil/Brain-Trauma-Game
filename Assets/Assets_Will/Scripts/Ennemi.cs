@@ -112,7 +112,6 @@ public class Ennemi : MonoBehaviour
     {
         if (other.tag == "FlareCollider")
         {
-            Debug.Log("touch");
             vie -= other.GetComponent<Flare>().damage;
             if (vie <= 0)
             {
