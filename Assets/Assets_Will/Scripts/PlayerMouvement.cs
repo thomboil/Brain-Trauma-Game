@@ -92,7 +92,7 @@ public class PlayerMouvement : MonoBehaviour
     {
         if(collision.collider.tag == "Planet")
         {
-            Debug.Log("Quit");
+
             lumineuxSpotlight = false;
         }
     }

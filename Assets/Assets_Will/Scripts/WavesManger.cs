@@ -7,7 +7,7 @@ public class WavesManger : MonoBehaviour
     GenerationEnnemi ge;
 
     int level = 1;
-    int waves = 0;
+    int waves = 4;
     float difficulte = 1.1f;
     // Start is called before the first frame update
     void Start()

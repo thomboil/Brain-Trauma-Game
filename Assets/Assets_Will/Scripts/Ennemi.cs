@@ -33,6 +33,17 @@ public class Ennemi : MonoBehaviour
         mat = GetComponent<Renderer>().material;
 
         vieIni = vie;
+        StartCoroutine("BugFix");
+    }
+
+    IEnumerator BugFix()
+    {
+        yield return new WaitForSeconds(3);
+        if(delete)
+        {
+            --nbEnnemi;
+            Destroy(gameObject);
+        }
     }
 
 
@@ -123,6 +134,15 @@ public class Ennemi : MonoBehaviour
             }
             HaloRange();
             ColorBaked();
+        }
+    }
+
+    bool delete = true;
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(collision.collider.name == "Planet")
+        {
+            delete = false;
         }
     }
 
