@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.008689598, g: 0.05924067, b: 0.10445481, a: 1}
+  m_IndirectSpecularColor: {r: 0.00869403, g: 0.05922004, b: 0.10443092, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -5816,9 +5816,15 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2143060428, guid: 4b3affc36f3816e49895c91d4c40c0e3, type: 3}
-      propertyPath: m_Range
-      value: 11
+    - target: {fileID: 6447504786004191930, guid: 4b3affc36f3816e49895c91d4c40c0e3,
+        type: 3}
+      propertyPath: speedMouvement
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6447504786004191930, guid: 4b3affc36f3816e49895c91d4c40c0e3,
+        type: 3}
+      propertyPath: speedRotation
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 476895591, guid: 4b3affc36f3816e49895c91d4c40c0e3, type: 3}
       propertyPath: m_Layer
@@ -5837,20 +5843,22 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6447504786004191930, guid: 4b3affc36f3816e49895c91d4c40c0e3,
-        type: 3}
-      propertyPath: speedMouvement
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6447504786004191930, guid: 4b3affc36f3816e49895c91d4c40c0e3,
-        type: 3}
-      propertyPath: speedRotation
-      value: 3
+    - target: {fileID: 2143060428, guid: 4b3affc36f3816e49895c91d4c40c0e3, type: 3}
+      propertyPath: m_Range
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 1341310644, guid: 4b3affc36f3816e49895c91d4c40c0e3, type: 3}
       propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1043535949, guid: 4b3affc36f3816e49895c91d4c40c0e3, type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 18271983}
+    - target: {fileID: 1043535949, guid: 4b3affc36f3816e49895c91d4c40c0e3, type: 3}
+      propertyPath: canvasJouer
+      value: 
+      objectReference: {fileID: 1213474966}
     - target: {fileID: 1649904600834559016, guid: 4b3affc36f3816e49895c91d4c40c0e3,
         type: 3}
       propertyPath: m_Layer

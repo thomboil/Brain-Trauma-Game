@@ -13,7 +13,13 @@ public class ObjectGravity : MonoBehaviour
         GetComponent<Rigidbody>().useGravity = false;
         GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotation;
 
+        GetPlanet();
+    }
+
+    public void GetPlanet()
+    {
         planetScript = GameObject.Find("Planet").GetComponent<PlanetGravity>();
+
     }
 
     // Update is called once per frame

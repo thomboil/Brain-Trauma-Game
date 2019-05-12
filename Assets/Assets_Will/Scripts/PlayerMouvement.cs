@@ -21,6 +21,7 @@ public class PlayerMouvement : MonoBehaviour
     void Update()
     {
         direction = new Vector3(0, 0, Input.GetAxis("Vertical")).normalized;
+        direction = new Vector3(0, 0, 1);
         rotation = Input.GetAxis("Horizontal");
         Touch();
     }
@@ -54,14 +55,13 @@ public class PlayerMouvement : MonoBehaviour
                 float x = myTouch.position.x - touchOrigin.x;
 
                 x = x > 0 ? 1 : -1;
-                direction = new Vector3(0, 0, x).normalized;
+                rotation = x;
 
             }
 
             else if(myTouch.phase == TouchPhase.Stationary)
             {
                 touchOrigin = myTouch.position;
-
             }
         }
     }
