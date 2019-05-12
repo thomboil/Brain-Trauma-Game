@@ -27,7 +27,7 @@ public class PlanetColor : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        nbEnnemi = Ennemi.nbEnnemi / (float)nbMaxEnnemi;
+        nbEnnemi = 2* Ennemi.nbEnnemi / (float)nbMaxEnnemi;
         mat.color = new Color(couleurInitiale.r, couleurInitiale.b - nbEnnemi, couleurInitiale.g - nbEnnemi, couleurInitiale.a);
     }
 }

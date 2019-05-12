@@ -14,32 +14,56 @@ public class Menu_Camera : MonoBehaviour
 
     public Transform cameraGameObject;
 
+    //References par game object
     public GameObject player;
     public GameObject gameManager;
 
     public GameObject canvasJouer;
 
+    //Declaration des scripts
+    private Player_Menu_Mvt playerMenuMvtScript;
+    private PlayerMouvement playerMouvementScript;
+    private GenerationEnnemi generationEnnemiScript;
+
     // Start is called before the first frame update
     void Start()
     {
-        cameraGameObject.position = menuPosition.position; //position initiale de la camera au menu
         play = false;
+        cameraGameObject.position = menuPosition.position; //position initiale de la camera au menu
+        
+        //Canvas Jouer au debut
         canvasJouer = GameObject.Find("Canvas_jouer");
         canvasJouer.SetActive(false);
-    }
+
+        //Script mouvement du menu
+        playerMenuMvtScript = player.GetComponent<Player_Menu_Mvt>();
+        playerMenuMvtScript.enabled = true;
+        //Script mouvement dans la game
+        playerMouvementScript = player.GetComponent<PlayerMouvement>();
+        playerMouvementScript.enabled = false;
+
+        //Script generation ennemi dans la game
+        generationEnnemiScript = gameManager.GetComponent<GenerationEnnemi>();
+        generationEnnemiScript.enabled = false;
+    }   
     bool oneTime = true;
     // Update is called once per frame
     void Update()
     {
-        if (play)
+        if (play) //Si on click sur start game:
         {
-            Debug.Log("Game Sart");
+            //Deplacement de la camera
             cameraGameObject.localPosition = Vector3.Lerp(menuPosition.localPosition, playPosition, transitionSpeed * Time.deltaTime);
-            //Quaternion targetRotation = Quaternion.LookRotation()
-            //cameraGameObject.transform.LookAt(robot);
             cameraGameObject.localRotation = Quaternion.Slerp(cameraGameObject.localRotation, Quaternion.Euler(90, 0, 0), transitionSpeed * Time.deltaTime);
 
+            //Activation canvas de jeu
             canvasJouer.SetActive(true);
+
+            //Activation des scripts de jeu
+            playerMenuMvtScript.enabled = false;
+            playerMouvementScript.enabled = true;
+
+            generationEnnemiScript.enabled = true;
         }
 
         if (cameraGameObject.localPosition.y == playPosition.y && oneTime)
@@ -49,17 +73,7 @@ public class Menu_Camera : MonoBehaviour
             Debug.Log("STOP");
 
 
-            //Canvas set active
-            
-
-            //Activation des scripts quand la camera est bien placee et on est pret a jouer.
-
-            //Player
-            player.GetComponent<Player_Menu_Mvt>().gameObject.SetActive(false);
-            player.GetComponent<PlayerMouvement>().gameObject.SetActive(true);
-
-            //Game manager
-            gameManager.GetComponent<GenerationEnnemi>().gameObject.SetActive(true);
+      
         }
 
 
@@ -69,10 +83,5 @@ public class Menu_Camera : MonoBehaviour
     {
         play = true;
         GameObject.Find("Canvas_menu").SetActive(false);
-
-        
-
-
-
     }
 }

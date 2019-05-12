@@ -10,6 +10,7 @@ public class pourcentage : MonoBehaviour
     public Text pourcentageTxt;
     public GameObject audioBad;
 
+
     // Start is called before the first frame update
     void Start()
     {
