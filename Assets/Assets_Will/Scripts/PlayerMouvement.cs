@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 public class PlayerMouvement : MonoBehaviour
 {
@@ -15,6 +16,9 @@ public class PlayerMouvement : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+
+        spotlight = GameObject.Find("Player").GetComponentsInChildren<Light>().First(x => x.name == "Spot Light");
+        strenghtLumiereIni = spotlight.range;
     }
 
     // Update is called once per frame
@@ -64,5 +68,41 @@ public class PlayerMouvement : MonoBehaviour
                 touchOrigin = myTouch.position;
             }
         }
+    }
+
+    Light spotlight;
+    float strenghtLumiereIni;
+
+    private void PasRapportMaisSpothlight()
+    {
+        if(lumineuxSpotlight && spotlight.range < strenghtLumiereIni)
+        {
+            spotlight.range += 0.4f;
+        }
+        else if(!lumineuxSpotlight)
+        {
+            spotlight.range -= 0.4f;
+
+        }
+    }
+
+    bool lumineuxSpotlight = true;
+
+    private void OnCollisionExit(Collision collision)
+    {
+        if(collision.collider.tag == "Planet")
+        {
+            Debug.Log("Quit");
+            lumineuxSpotlight = false;
+        }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.collider.tag == "Planet")
+        {
+            lumineuxSpotlight = true;
+        }
+
     }
 }
