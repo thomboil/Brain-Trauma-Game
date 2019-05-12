@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class CameraHead : MonoBehaviour
 {
@@ -41,8 +42,10 @@ public class CameraHead : MonoBehaviour
             {
                 Vector3 destination = head.transform.position;
                 transform.position = Vector3.Lerp(transform.position, destination, speedMouvement * Time.deltaTime);
-                if(image.color.a < 1)
+                if (image.color.a < 1)
                     image.color = new Color(image.color.r, image.color.b, image.color.g, image.color.a + speedThickness);
+                else
+                    SceneManager.LoadScene(1);
             }
         }
     }

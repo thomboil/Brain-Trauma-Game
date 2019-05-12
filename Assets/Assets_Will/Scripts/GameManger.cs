@@ -38,6 +38,7 @@ public class GameManger : MonoBehaviour
 
     public void Restart()
     {
-        SceneManager.LoadScene("Enviro");
+        SceneManager.UnloadSceneAsync(1);
+        SceneManager.LoadScene(1);
     }
 }
