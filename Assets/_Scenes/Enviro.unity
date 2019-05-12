@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.00869403, g: 0.05922004, b: 0.10443092, a: 1}
+  m_IndirectSpecularColor: {r: 0.008685761, g: 0.059288666, b: 0.10442842, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -130,6 +130,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88315fb6fe63b7c49aed97ba9a60755b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Planet: {fileID: 0}
 --- !u!4 &18271987 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 705732376825856151, guid: 2a3b15f4a62ff32489e3ab1ef6efa6d0,
@@ -5751,16 +5752,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 6447504786004191931, guid: 4b3affc36f3816e49895c91d4c40c0e3,
-        type: 3}
-      propertyPath: m_TagString
-      value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 6447504786004191931, guid: 4b3affc36f3816e49895c91d4c40c0e3,
-        type: 3}
-      propertyPath: m_Layer
-      value: 11
-      objectReference: {fileID: 0}
     - target: {fileID: 6447504786004191878, guid: 4b3affc36f3816e49895c91d4c40c0e3,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5816,41 +5807,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6447504786004191930, guid: 4b3affc36f3816e49895c91d4c40c0e3,
-        type: 3}
-      propertyPath: speedMouvement
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6447504786004191930, guid: 4b3affc36f3816e49895c91d4c40c0e3,
-        type: 3}
-      propertyPath: speedRotation
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 476895591, guid: 4b3affc36f3816e49895c91d4c40c0e3, type: 3}
-      propertyPath: m_Layer
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1998564178, guid: 4b3affc36f3816e49895c91d4c40c0e3, type: 3}
-      propertyPath: m_Layer
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2143060426, guid: 4b3affc36f3816e49895c91d4c40c0e3, type: 3}
-      propertyPath: m_Layer
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6447504785422710813, guid: 4b3affc36f3816e49895c91d4c40c0e3,
-        type: 3}
-      propertyPath: m_Layer
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2143060428, guid: 4b3affc36f3816e49895c91d4c40c0e3, type: 3}
-      propertyPath: m_Range
-      value: 11
-      objectReference: {fileID: 0}
-    - target: {fileID: 1341310644, guid: 4b3affc36f3816e49895c91d4c40c0e3, type: 3}
-      propertyPath: m_Layer
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1043535949, guid: 4b3affc36f3816e49895c91d4c40c0e3, type: 3}
       propertyPath: gameManager
       value: 
@@ -5859,15 +5815,15 @@ PrefabInstance:
       propertyPath: canvasJouer
       value: 
       objectReference: {fileID: 1213474966}
-    - target: {fileID: 1649904600834559016, guid: 4b3affc36f3816e49895c91d4c40c0e3,
+    - target: {fileID: 6447504785422710810, guid: 4b3affc36f3816e49895c91d4c40c0e3,
         type: 3}
-      propertyPath: m_Layer
-      value: 0
+      propertyPath: m_LocalPosition.z
+      value: 1.98
       objectReference: {fileID: 0}
-    - target: {fileID: 1649904600834559018, guid: 4b3affc36f3816e49895c91d4c40c0e3,
+    - target: {fileID: 6447504785422710810, guid: 4b3affc36f3816e49895c91d4c40c0e3,
         type: 3}
-      propertyPath: damage
-      value: 0.2
+      propertyPath: m_LocalPosition.y
+      value: 1.024
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4b3affc36f3816e49895c91d4c40c0e3, type: 3}
