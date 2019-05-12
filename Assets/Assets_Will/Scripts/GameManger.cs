@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
+using UnityEngine.SceneManagement;
 
 public class GameManger : MonoBehaviour
 {
@@ -37,6 +38,6 @@ public class GameManger : MonoBehaviour
 
     public void Restart()
     {
-
+        SceneManager.LoadScene("Enviro");
     }
 }
