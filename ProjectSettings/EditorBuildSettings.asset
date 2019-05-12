@@ -4,4 +4,11 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/_Scenes/Trauma.unity
+    guid: dfbea6d22c6d3cf44b31e81d23614221
+  - enabled: 1
+    path: Assets/_Scenes/Enviro.unity
+    guid: cbdef5bf7ca77004682a5303fe5c848d
+  m_configObjects: {}

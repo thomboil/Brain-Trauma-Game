@@ -38,7 +38,8 @@ public class GameManger : MonoBehaviour
 
     public void Restart()
     {
-        SceneManager.UnloadSceneAsync(1);
+        Ennemi.nbEnnemi = 0;
+        Menu_Camera.play = false;
         SceneManager.LoadScene(1);
     }
 }

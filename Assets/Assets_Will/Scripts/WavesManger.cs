@@ -9,7 +9,7 @@ public class WavesManger : MonoBehaviour
     Canvas cnv;
 
     int level = 1;
-    int waves = 4;
+    public int waves = 0;
     float difficulte = 1.1f;
     // Start is called before the first frame update
     void Start()

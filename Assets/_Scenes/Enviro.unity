@@ -145,6 +145,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 19870295}
+  - component: {fileID: 19870296}
   m_Layer: 0
   m_Name: Level_Stats
   m_TagString: Untagged
@@ -169,6 +170,18 @@ Transform:
   m_Father: {fileID: 1213474970}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &19870296
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 19870294}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1eb0d90369afc2049b791727d7b62094, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &64968799
 GameObject:
   m_ObjectHideFlags: 0
@@ -542,7 +555,7 @@ MonoBehaviour:
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 0
-  m_FillAmount: 0.255
+  m_FillAmount: 0.153
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
@@ -6642,6 +6655,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 4547587726954601943, guid: 4a4b8bf49324e34448e8ee22c1400525,
         type: 3}
+    - target: {fileID: 18271984, guid: 2a3b15f4a62ff32489e3ab1ef6efa6d0, type: 3}
+      propertyPath: waves
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2a3b15f4a62ff32489e3ab1ef6efa6d0, type: 3}
 --- !u!1 &1748406418
