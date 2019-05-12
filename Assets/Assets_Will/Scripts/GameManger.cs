@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameManger : MonoBehaviour
 {
@@ -13,8 +14,16 @@ public class GameManger : MonoBehaviour
     Canvas cnv;
 
     //audiosource
-
     public AudioSource gameOver_Sound;
+
+
+    //UI score stuff
+
+    public Text score;
+    public Text highscore;
+    public Text levelTxtBox;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -26,6 +35,7 @@ public class GameManger : MonoBehaviour
         cnv.enabled = false;
     }
 
+    bool endGame = true;
     // Update is called once per frame
     void Update()
     {
@@ -39,6 +49,15 @@ public class GameManger : MonoBehaviour
                 spotlight.range -= 0.1f;
 
             cnv.enabled = true;
+
+            if (endGame)
+            {
+                score.text = "Score: " + levelTxtBox.text;
+                KeepScore.WriteHighScore(int.Parse(levelTxtBox.text)); //Checker si new highscoer avec le fichier text
+                highscore.text = "Top score: " + KeepScore.ReadHighScore();
+                endGame = false;
+            }
+            
         }
     }
 

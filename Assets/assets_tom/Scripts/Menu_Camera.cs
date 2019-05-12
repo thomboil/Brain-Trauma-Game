@@ -25,6 +25,10 @@ public class Menu_Camera : MonoBehaviour
     private PlayerMouvement playerMouvementScript;
     private GenerationEnnemi generationEnnemiScript;
 
+    //AudioSource
+
+    public AudioSource startGame_Sound;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -83,5 +87,7 @@ public class Menu_Camera : MonoBehaviour
     {
         play = true;
         GameObject.Find("Canvas_menu").SetActive(false);
+        startGame_Sound.Play();
+
     }
 }
